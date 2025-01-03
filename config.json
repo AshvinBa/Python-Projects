@@ -1,0 +1,19 @@
+{
+    "params": {
+        "local_server": "True",
+        "local_uri": "mysql+pymysql://root:@localhost/CoddingThunder2",
+        "prod_uri": "mysql+pymysql://root:@localhost/CoddingThunder2",
+        "fb_url": "https://facebook.com/CoddingThunder2",
+        "tw_url": "https://twitter.com/CoddingThunder2",
+        "gi_url": "https://github.com/CoddingThunder2",
+        "Title": "Blog Writting",
+        "tag_line": "The Blog Writting is key of communication behind the life.",
+        "gmail-user": "ashvinbari9@gmail.com",
+        "gmail-password": "ashSud@9370",
+        "tag_line2": "Hi My Name is Ashvin and I am From Jalgaon and I am interested in codding and i daily solve the 100 PYQ's Of the capgeminy.",
+        "no_od_posts": 2,
+        "admin_user": "admin",
+        "admin_pass": "icoet",
+        "upload_location": "C:\\Users\\Admin\\OneDrive\\Desktop\\Python Cource\\Python Flask - 2"
+    }
+}

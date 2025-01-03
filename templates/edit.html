@@ -1,0 +1,87 @@
+{% extends "layout.html" %}
+{% block body %} 
+
+<!-- Page Header-->
+<header class="masthead" style="background-image: url('{{ url_for('static', filename='assets/img/home-bg.jpg') }}')">
+    <div class="container position-relative px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+            <div class="col-md-10 col-lg-8 col-xl-7">
+                <div class="site-heading">
+                    <h1>Admin Panel</h1>
+                    <span class="subheading">{{ params['tag_line'] }}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Main Content-->
+<div class="container px-4 px-lg-5">
+    <div class="row gx-4 gx-lg-5 justify-content-center">
+        <div class="col-md-10 col-lg-8 col-xl-7">
+            <h1>Add/Edit Post</h1>
+            <a href="/login">
+                <button class="btn btn-primary float-left text-uppercase">Dashboard Home</button>
+            </a>
+            <a href="/logout">
+                <button class="btn btn-primary float-left text-uppercase" style="margin-left:10px">Logout</button>
+            </a>
+            <hr>
+            <form id="contactForm" name="sendMessage" action="/edit/{{ sno }}" method="post" novalidate>
+                <div class="form-floating">    
+                    <div class="form-group controls"> 
+                        <label>Title</label>
+                        <input class="form-control" id="title" type="text" name="title" 
+                               value="{{ post.title if post else '' }}" data-sb-validations="required"/>
+                        <p class="help-block text-danger"></p>
+                    </div>
+                </div>
+                
+                <div class="form-floating">    
+                    <div class="form-group controls"> 
+                        <label>Tagline</label>
+                        <input class="form-control" id="tline" type="text" name="tline" 
+                               value="{{ post.tagline if post else '' }}" data-sb-validations="required"/>
+                        <p class="help-block text-danger"></p>
+                    </div>
+                </div>
+                
+                <div class="form-floating">    
+                    <div class="form-group controls"> 
+                        <label>Slug</label>
+                        <input class="form-control" id="slug" type="text" name="slug" 
+                               value="{{ post.slug if post else '' }}" data-sb-validations="required"/>
+                        <p class="help-block text-danger"></p>
+                    </div>
+                </div>
+
+                <div class="form-floating">    
+                    <div class="form-group controls"> 
+                        <label>User Name</label>
+                        <input class="form-control" id="user" type="text" name="user" 
+                               value="{{ post.users if post else '' }}" data-sb-validations="required"/>
+                        <p class="help-block text-danger"></p>
+                    </div>
+                </div>
+
+                <div class="form-floating">    
+                    <div class="form-group controls"> 
+                        <label>Content</label>
+                        <textarea class="form-control" id="content" name="content" data-sb-validations="required">{{ post.content if post else '' }}</textarea>
+                        <p class="help-block text-danger"></p>
+                    </div>
+                </div>
+
+                <br>
+                <div id="success"></div>
+                <div class="form-group">
+                    <button class="btn btn-primary" style="margin-bottom: 20px" id="sendMessageButton" type="submit">
+                        Send
+                    </button>
+                </div>                         
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
